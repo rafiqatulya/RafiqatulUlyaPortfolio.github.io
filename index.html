@@ -8,7 +8,7 @@
     <!-- Google Fonts: Playfair Display & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,7 +31,8 @@
                             cream: '#F7F4EE',    // Background beige/krem
                             accent: '#6A4432',   // Teks cokelat/maroon
                             muted: '#9CA3AF',    // Teks abu-abu
-                            light: '#E5E5E5'     // Teks putih/abu terang
+                            light: '#E5E5E5',    // Teks putih/abu terang
+                            frame: '#523B2D'     // Cokelat untuk frame background hero
                         }
                     }
                 }
@@ -68,6 +69,7 @@
         
         <div class="hidden md:flex space-x-8 items-center">
             <a href="#home" class="text-sm font-medium hover:text-brand-accent transition">Home</a>
+            <a href="#about" class="text-sm font-medium hover:text-brand-accent transition">About</a>
             <a href="#competencies" class="text-sm font-medium hover:text-brand-accent transition">Services</a>
             <a href="#experience" class="text-sm font-medium hover:text-brand-accent transition">Experience</a>
             <a href="#portfolio" class="text-sm font-medium hover:text-brand-accent transition">Portfolio</a>
@@ -77,38 +79,90 @@
         <button class="md:hidden text-white text-xl"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- SECTION 1: HERO -->
-    <section class="relative min-h-screen flex items-center justify-center bg-[#181818] pt-8 md:pt-16 pb-24 overflow-hidden" id="home">
-        <!-- Main Canvas Frame -->
-        <div class="relative w-full max-w-6xl aspect-[4/3] md:h-[80vh] md:aspect-auto mx-auto shadow-2xl fade-in visible">
+    <!-- SECTION 1: HERO (DESAIN EDITORIAL MAJALAH) -->
+    <section class="relative w-full flex items-center justify-center bg-brand-frame pt-12 md:pt-20 pb-16 md:pb-24 px-4 md:px-12 overflow-hidden" id="home">
+        
+        <!-- Bingkai Foto Utama -->
+        <div class="relative w-full max-w-6xl aspect-[4/5] sm:aspect-[4/3] md:aspect-[16/9] mx-auto shadow-2xl fade-in visible overflow-hidden bg-gray-200">
             
             <!-- Foto Background Utama -->
-            <img src="foto-hero.jpg" alt="Rafiqatul Ulya" class="absolute inset-0 w-full h-full object-cover border border-white/5 opacity-80 bg-[#1C1A1A]">
+            <img src="foto-hero.jpg" alt="Rafiqatul Ulya" class="absolute inset-0 w-full h-full object-cover">
+            
+            <!-- Efek gradient tipis agar teks kanan selalu terbaca -->
+            <div class="absolute inset-0 bg-gradient-to-l from-white/70 via-white/10 to-transparent"></div>
 
-            <!-- Garis Cokelat Kiri -->
-            <div class="absolute top-[15%] left-[8%] md:left-[10%] w-[3px] h-16 bg-brand-accent z-10 hidden md:block opacity-90"></div>
-
-            <!-- Teks Overlay Kanan (Nama & Profesi) -->
-            <div class="absolute top-[10%] md:top-[15%] right-[5%] md:right-[8%] z-10 text-left bg-white/40 md:bg-transparent p-4 md:p-0 backdrop-blur-sm md:backdrop-blur-none rounded-lg md:rounded-none">
-                <div class="w-16 h-[2px] bg-brand-accent mb-4 opacity-90 hidden md:block"></div>
-                <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-accent mb-4 md:mb-6 font-medium tracking-wide">RAFIQATUL ULYA</h1>
-                <div class="space-y-1.5 text-brand-accent font-medium md:font-light tracking-wide text-sm md:text-base drop-shadow-md md:drop-shadow-none">
-                    <p><span class="mr-2 opacity-60">|</span>Technology Delivery</p>
-                    <p><span class="mr-2 opacity-60">|</span>Data Analytics</p>
-                    <p><span class="mr-2 opacity-60">|</span>Digital Product Design</p>
-                </div>
+            <!-- Teks Vertikal Kiri -->
+            <div class="absolute left-10 top-1/3 -rotate-90 origin-left hidden lg:flex items-center gap-4 text-brand-dark tracking-[0.2em] text-[10px] font-bold">
+                WWW.RAFIQATULULYA.COM
+                <span class="w-12 h-[1px] bg-brand-dark"></span>
             </div>
+
+            <!-- Teks Overlay Kanan -->
+            <div class="absolute top-[8%] md:top-[15%] right-[5%] md:right-[8%] z-10 text-right max-w-[280px]">
+                <div class="w-10 h-[2px] bg-brand-accent mb-3 ml-auto"></div>
+                <h1 class="font-serif text-2xl md:text-3xl lg:text-4xl text-brand-accent mb-3 font-bold tracking-wide">Rafiqatul Ulya</h1>
+                <p class="text-brand-dark font-medium md:font-semibold text-xs md:text-sm leading-relaxed">
+                    Technology Delivery, Data Analytics, and Digital Product Design portfolio highlighting data-driven solutions.
+                </p>
+            </div>
+
         </div>
         
         <!-- Full-width PORTFOLIO Banner Tengah -->
-        <div class="absolute top-[75%] md:top-[70%] left-0 w-full bg-brand-cream py-4 md:py-8 z-20 shadow-xl transform -translate-y-1/2 flex justify-center border-y border-brand-accent/20">
-            <h2 class="font-serif text-5xl md:text-7xl lg:text-[7rem] text-brand-accent tracking-widest font-bold">PORTFOLIO</h2>
+        <div class="absolute top-[70%] left-0 w-full bg-brand-cream/95 backdrop-blur-sm py-3 md:py-5 z-20 shadow-xl transform -translate-y-1/2 flex justify-center">
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-accent tracking-[0.3em] font-bold ml-4">PORTFOLIO</h2>
         </div>
     </section>
 
-    <!-- SECTION 2: COMPETENCIES (My Services) -->
+    <!-- SECTION 2: INTRODUCTION (About Me) -->
+    <section id="about" class="bg-white py-20 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+            <!-- Gambar Kiri (Arch Shape) -->
+            <div class="relative max-w-sm mx-auto md:mx-0">
+                <div class="absolute inset-0 bg-brand-accent/20 arch-img translate-x-4 translate-y-4"></div>
+                <!-- Foto About Me -->
+                <img src="foto-about.jpg" alt="About Rafiqatul Ulya" class="w-full h-[400px] object-cover arch-img shadow-lg relative z-10 border-4 border-white bg-gray-200">
+                <i class="fas fa-certificate text-brand-accent text-4xl absolute -left-4 top-10 z-20"></i>
+            </div>
+            
+            <!-- Teks Kanan -->
+            <div>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">Introduction & <br><span class="text-brand-accent italic">About me</span></h2>
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    I am a highly motivated Information Systems graduate from Andalas University (GPA 3.86/4.00) with a strong analytical mindset, passionate about driving digital transformation. I specialize in translating complex business needs into effective technology solutions.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="bg-brand-cream p-4 rounded-lg border border-brand-accent/10 text-center">
+                        <h4 class="font-serif font-bold text-3xl text-brand-dark mb-1">3+</h4>
+                        <p class="text-sm text-gray-600 font-medium">Core Competencies</p>
+                    </div>
+                    <div class="bg-brand-cream p-4 rounded-lg border border-brand-accent/10 text-center">
+                        <h4 class="font-serif font-bold text-3xl text-brand-dark mb-1">6</h4>
+                        <p class="text-sm text-gray-600 font-medium">Key Digital Projects</p>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="font-bold text-brand-dark mb-3">Career Interest:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">Business Analyst</span>
+                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">Product Management</span>
+                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">Digital Transformation</span>
+                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">BI / Data Roles</span>
+                    </div>
+                </div>
+
+                <a href="#contact" class="inline-block border-2 border-brand-accent text-brand-accent px-8 py-3 rounded-full font-bold hover:bg-brand-accent hover:text-white transition">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: COMPETENCIES (My Services) -->
     <section id="competencies" class="bg-brand-dark text-white py-20 relative overflow-hidden border-t-4 border-brand-accent">
-        <div class="max-w-6xl mx-auto px-6 relative z-10 pt-10 fade-in">
+        <div class="max-w-6xl mx-auto px-6 relative z-10 fade-in">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
                 <div>
                     <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">Core <span class="text-brand-accent italic">Competencies</span></h2>
@@ -155,7 +209,7 @@
         </div>
     </section>
 
-    <!-- SECTION 3: WORK EXPERIENCE (Timeline) -->
+    <!-- SECTION 4: WORK EXPERIENCE (Timeline) -->
     <section id="experience" class="py-20 px-6 bg-brand-cream border-b border-brand-accent/10">
         <div class="max-w-4xl mx-auto text-center mb-16 fade-in">
             <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">Professional <span class="text-brand-accent italic">Journey</span></h2>
@@ -219,56 +273,8 @@
         </div>
     </section>
 
-    <!-- SECTION 4: INTRODUCTION (About Me) -->
-    <section class="bg-white py-20 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
-            <!-- Gambar Kiri (Arch Shape) -->
-            <div class="relative max-w-sm mx-auto md:mx-0">
-                <div class="absolute inset-0 bg-brand-accent/20 arch-img translate-x-4 translate-y-4"></div>
-                
-                <!-- Foto About Me -->
-                <img src="foto-about.jpg" alt="About Rafiqatul Ulya" class="w-full h-[400px] object-cover arch-img shadow-lg relative z-10 border-4 border-white bg-gray-200">
-                
-                <i class="fas fa-certificate text-brand-accent text-4xl absolute -left-4 top-10 z-20"></i>
-            </div>
-            
-            <!-- Teks Kanan -->
-            <div>
-                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">Introduction & <br><span class="text-brand-accent italic">About me</span></h2>
-                <p class="text-gray-600 leading-relaxed mb-8">
-                    I am a highly motivated Information Systems graduate from Andalas University (GPA 3.86/4.00) with a strong analytical mindset, passionate about driving digital transformation. I specialize in translating complex business needs into effective technology solutions.
-                </p>
-
-                <div class="grid grid-cols-2 gap-6 mb-8">
-                    <div class="bg-brand-cream p-4 rounded-lg border border-brand-accent/10 text-center">
-                        <h4 class="font-serif font-bold text-3xl text-brand-dark mb-1">3+</h4>
-                        <p class="text-sm text-gray-600 font-medium">Core Competencies</p>
-                    </div>
-                    <div class="bg-brand-cream p-4 rounded-lg border border-brand-accent/10 text-center">
-                        <h4 class="font-serif font-bold text-3xl text-brand-dark mb-1">6</h4>
-                        <p class="text-sm text-gray-600 font-medium">Key Digital Projects</p>
-                    </div>
-                </div>
-
-                <div class="mb-8">
-                    <h4 class="font-bold text-brand-dark mb-3">Career Interest:</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">Business Analyst</span>
-                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">Product Management</span>
-                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">Digital Transformation</span>
-                        <span class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-full">BI / Data Roles</span>
-                    </div>
-                </div>
-
-                <a href="#contact" class="inline-block border-2 border-brand-accent text-brand-accent px-8 py-3 rounded-full font-bold hover:bg-brand-accent hover:text-white transition">
-                    Let's Talk
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- SECTION 5: PORTFOLIO -->
-    <section id="portfolio" class="py-20 px-6 bg-brand-cream border-t border-brand-accent/10">
+    <section id="portfolio" class="py-20 px-6 bg-white border-t border-brand-accent/10">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end mb-12 fade-in">
             <div>
                 <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">Lets have a look at <br>my <span class="text-brand-accent italic">Portfolio</span></h2>
@@ -281,9 +287,7 @@
             <!-- Project 1: Pasar Tutor -->
             <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
                 <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <!-- Foto Pasar Tutor -->
                     <img src="project-pasartutor.jpg" alt="Pasar Tutor" class="w-full h-full object-cover">
-                    
                     <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <a href="https://www.pasartutor.com/" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
@@ -309,9 +313,7 @@
             <!-- Project 2: AIMS -->
             <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
                 <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <!-- Foto AIMS -->
                     <img src="project-aims.jpg" alt="AIMS Messaging App" class="w-full h-full object-cover">
-                    
                     <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <a href="https://drive.google.com/file/d/1feJrbV4Jlgn7-MY7DGpABoo_f_CKMeUp/view" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
@@ -337,9 +339,7 @@
             <!-- Project 3: BPKP Portal -->
             <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
                 <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <!-- Foto BPKP -->
                     <img src="project-bpkp.jpg" alt="BPKP Portal" class="w-full h-full object-cover">
-                    
                     <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <a href="https://sites.google.com/view/bpkpsumbar/halaman-muka" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
@@ -365,9 +365,7 @@
             <!-- Project 4: Maju Tetap Bersama -->
             <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
                 <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <!-- Foto MTB -->
                     <img src="project-mtb.jpg" alt="Maju Tetap Bersama" class="w-full h-full object-cover">
-                    
                     <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <a href="https://majutetapbersama.com/" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
@@ -393,10 +391,7 @@
             <!-- Project 5: BMT Analytics -->
             <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
                 <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <!-- Foto BMT -->
                     <img src="project-bmt.jpg" alt="BMT Financial Dashboard" class="w-full h-full object-cover">
-                    
-                    <!-- Link dikosongkan (diisi #) karena belum ada di daftarmu -->
                     <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <a href="#" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-chart-line text-lg"></i></a>
                     </div>
@@ -422,9 +417,7 @@
             <!-- Project 6: Mining Command Center -->
             <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
                 <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <!-- Foto Mining -->
                     <img src="project-mining.jpg" alt="Mining Command Center" class="w-full h-full object-cover">
-                    
                     <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                         <a href="https://drive.google.com/file/d/1UqmgmKMvlobMr0oK5hbc7zAuzPm76DPU/view" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
@@ -505,7 +498,7 @@
     </section>
 
     <!-- SECTION 7: CONTACT -->
-    <section id="contact" class="bg-white py-20 px-6">
+    <section id="contact" class="bg-brand-cream py-20 px-6">
         <div class="max-w-4xl mx-auto text-center fade-in">
             <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">
                 Have an Awesome Project Idea? <br>
@@ -516,7 +509,7 @@
             </p>
 
             <!-- Contact Input Style Layout -->
-            <div class="bg-brand-cream border border-gray-200 p-2 rounded-full flex items-center max-w-lg mx-auto shadow-sm mb-12">
+            <div class="bg-white border border-gray-200 p-2 rounded-full flex items-center max-w-lg mx-auto shadow-sm mb-12">
                 <div class="pl-6 text-brand-accent">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -527,7 +520,7 @@
             </div>
 
             <!-- Stats/Info Row -->
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-gray-200 pt-10">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-brand-accent/10 pt-10">
                 <div class="flex items-center gap-3">
                     <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
                     <div class="text-left">
@@ -566,6 +559,7 @@
                 <h4 class="font-bold text-lg mb-4 font-serif">Quick Links</h4>
                 <ul class="space-y-2 text-sm text-brand-muted">
                     <li><a href="#home" class="hover:text-brand-accent transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-brand-accent transition">About</a></li>
                     <li><a href="#competencies" class="hover:text-brand-accent transition">Services</a></li>
                     <li><a href="#portfolio" class="hover:text-brand-accent transition">Portfolio</a></li>
                     <li><a href="#contact" class="hover:text-brand-accent transition">Contact</a></li>
