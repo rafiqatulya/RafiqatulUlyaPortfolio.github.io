@@ -8,7 +8,7 @@
     <!-- Google Fonts: Playfair Display & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,12 +27,13 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#1C1A1A',     // Background hitam elegan
-                            cream: '#F7F4EE',    // Background beige/krem
-                            accent: '#6A4432',   // Teks cokelat/maroon
-                            muted: '#9CA3AF',    // Teks abu-abu
-                            light: '#E5E5E5',    // Teks putih/abu terang
-                            frame: '#523B2D'     // Cokelat untuk frame background hero
+                            navy: '#0F1423',     // Biru Dongker / Slate sangat pekat (Background utama)
+                            dark: '#1E293B',     // Teks Abu-abu Gelap untuk area terang
+                            surface: '#F8FAFC',  // Abu-abu sangat muda (Area konten terang)
+                            accent: '#FF6B4A',   // Coral/Oranye (Hanya untuk titik dan aksen kecil)
+                            secondary: '#3B82F6',// Biru teknologi (Untuk tombol & hover)
+                            muted: '#A2A8BA',    // Abu-abu kebiruan (Warna teks PortFolio & Box)
+                            light: '#E2E4EB',    // Putih keabu-abuan terang
                         }
                     }
                 }
@@ -41,7 +42,7 @@
     </script>
 
     <style>
-        body { background-color: #F7F4EE; }
+        body { background-color: #FFFFFF; }
         
         /* Bentuk Arch/Lengkungan untuk Gambar di About Me */
         .arch-img {
@@ -61,83 +62,113 @@
         }
     </style>
 </head>
-<body class="text-brand-dark font-sans antialiased overflow-x-hidden">
+<body class="text-brand-dark bg-brand-light font-sans antialiased overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav class="w-full z-50 bg-brand-dark text-white py-4 px-6 md:px-12 flex justify-between items-center shadow-md sticky top-0">
-        <a href="#" class="font-serif text-2xl font-bold tracking-widest text-brand-cream">RU.</a>
+    <nav class="w-full z-50 bg-brand-navy/95 backdrop-blur-md text-white py-4 px-6 md:px-12 flex justify-between items-center shadow-lg sticky top-0 border-b border-white/5">
+        <a href="#" class="font-sans text-2xl font-black tracking-widest text-white">RU<span class="text-brand-accent">.</span></a>
         
         <div class="hidden md:flex space-x-8 items-center">
-            <a href="#home" class="text-sm font-medium hover:text-brand-accent transition">Home</a>
-            <a href="#about" class="text-sm font-medium hover:text-brand-accent transition">About</a>
-            <a href="#competencies" class="text-sm font-medium hover:text-brand-accent transition">Services</a>
-            <a href="#experience" class="text-sm font-medium hover:text-brand-accent transition">Experience</a>
-            <a href="#portfolio" class="text-sm font-medium hover:text-brand-accent transition">Portfolio</a>
-            <a href="#contact" class="bg-brand-accent text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#523324] transition">Hire Me</a>
+            <a href="#home" class="text-sm font-medium text-brand-muted hover:text-white transition">Home</a>
+            <a href="#about" class="text-sm font-medium text-brand-muted hover:text-white transition">About</a>
+            <a href="#competencies" class="text-sm font-medium text-brand-muted hover:text-white transition">Services</a>
+            <a href="#experience" class="text-sm font-medium text-brand-muted hover:text-white transition">Experience</a>
+            <a href="#portfolio" class="text-sm font-medium text-brand-muted hover:text-white transition">Portfolio</a>
+            <a href="#contact" class="bg-brand-secondary text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-600 shadow-[0_0_15px_rgba(59,130,246,0.3)] transition duration-300">Hire Me</a>
         </div>
         
         <button class="md:hidden text-white text-xl"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- SECTION 1: HERO (DESAIN EDITORIAL MAJALAH) -->
-    <section class="relative w-full flex items-center justify-center bg-brand-frame pt-12 md:pt-20 pb-16 md:pb-24 px-4 md:px-12 overflow-hidden" id="home">
+    <!-- SECTION 1: HERO -->
+    <section class="relative w-full h-screen bg-brand-navy overflow-hidden flex items-center pt-10" id="home">
         
-        <!-- Bingkai Foto Utama -->
-        <div class="relative w-full max-w-6xl aspect-[4/5] sm:aspect-[4/3] md:aspect-[16/9] mx-auto shadow-2xl fade-in visible overflow-hidden bg-gray-200">
-            
-            <!-- Foto Background Utama -->
-            <img src="foto-hero.jpg" alt="Rafiqatul Ulya" class="absolute inset-0 w-full h-full object-cover">
-            
-            <!-- Efek gradient tipis agar teks kanan selalu terbaca -->
-            <div class="absolute inset-0 bg-gradient-to-l from-white/70 via-white/10 to-transparent"></div>
-
-            <!-- Teks Vertikal Kiri -->
-            <div class="absolute left-10 top-1/3 -rotate-90 origin-left hidden lg:flex items-center gap-4 text-brand-dark tracking-[0.2em] text-[10px] font-bold">
-                WWW.RAFIQATULULYA.COM
-                <span class="w-12 h-[1px] bg-brand-dark"></span>
-            </div>
-
-            <!-- Teks Overlay Kanan -->
-            <div class="absolute top-[8%] md:top-[15%] right-[5%] md:right-[8%] z-10 text-right max-w-[280px]">
-                <div class="w-10 h-[2px] bg-brand-accent mb-3 ml-auto"></div>
-                <h1 class="font-serif text-2xl md:text-3xl lg:text-4xl text-brand-accent mb-3 font-bold tracking-wide">Rafiqatul Ulya</h1>
-                <p class="text-brand-dark font-medium md:font-semibold text-xs md:text-sm leading-relaxed">
-                    Technology Delivery & Digital Solutions.
-                </p>
-            </div>
-
+        <!-- Grid Lines (Estetika teknikal silang) -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+            <!-- Garis Horizontal -->
+            <div class="absolute top-[38%] left-[5%] md:left-[8%] right-0 h-[1px] bg-white/10"></div>
+            <!-- Garis Vertikal -->
+            <div class="absolute top-[5%] bottom-[5%] left-[5%] md:left-[8%] w-[1px] bg-white/10"></div>
         </div>
-        
-        <!-- Full-width PORTFOLIO Banner Tengah -->
-        <div class="absolute top-[70%] left-0 w-full bg-brand-cream/95 backdrop-blur-sm py-3 md:py-5 z-20 shadow-xl transform -translate-y-1/2 flex justify-center">
-            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-accent tracking-[0.3em] font-bold ml-4">PORTFOLIO</h2>
+
+        <div class="max-w-7xl mx-auto px-4 md:px-10 w-full relative z-10 flex flex-col md:flex-row h-full">
+
+            <!-- Left Content: Text Layout -->
+            <div class="w-full md:w-[65%] h-[60%] md:h-full flex flex-col justify-center relative z-20 pt-10 md:pt-0">
+                
+                <div class="relative pl-6 md:pl-10">
+                    
+                    <!-- Baris Atas: Text "My" + Titik + Kotak Detail -->
+                    <div class="flex items-start md:items-center gap-4 md:gap-8 relative z-20">
+                        <!-- Teks 'My' -->
+                        <div class="flex items-baseline">
+                            <h1 class="text-[90px] sm:text-[110px] md:text-[150px] lg:text-[180px] font-black text-brand-muted leading-none tracking-tighter drop-shadow-sm">My</h1>
+                            <div class="w-4 h-4 md:w-6 md:h-6 bg-brand-accent rounded-full ml-1 md:ml-3 mb-4 md:mb-8 shadow-[0_0_15px_rgba(255,107,74,0.6)]"></div>
+                        </div>
+
+                        <!-- Kotak Info (Tahun & Role) Sesuai Referensi -->
+                        <div class="hidden md:flex flex-col border border-brand-muted/70 w-[240px] mt-4 md:mt-12 bg-brand-navy">
+                            <!-- Bagian Atas Kotak (Solid) -->
+                            <div class="bg-brand-muted px-4 py-2">
+                                <p class="font-serif font-extrabold text-brand-navy text-[15px] tracking-wide">Jan.2021 - Present</p>
+                            </div>
+                            <!-- Bagian Bawah Kotak (Transparan) -->
+                            <div class="px-4 py-3">
+                                <p class="font-serif text-brand-muted text-xs leading-relaxed font-semibold">
+                                    Tech Delivery &<br>
+                                    Data Analytics<br>
+                                    Professional
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baris Bawah: Teks 'PortFolio' (Dua Warna) -->
+                    <h1 class="text-[75px] sm:text-[90px] md:text-[130px] lg:text-[155px] font-black leading-none tracking-tighter mt-[-15px] md:mt-[-35px] relative z-20">
+                        <span class="text-brand-muted">Port</span><span class="text-brand-light">Folio</span>
+                    </h1>
+
+                    <!-- Info Kontak Kecil Bawah -->
+                    <div class="mt-8 md:mt-12 relative z-20">
+                        <h3 class="font-black text-brand-muted text-lg md:text-xl tracking-wide mb-0.5">Rafiqatul Ulya</h3>
+                        <p class="text-[#697085] text-xs md:text-sm font-medium tracking-wide">rafiqatululya30@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content: Image/Photo -->
+            <div class="w-full md:w-[35%] absolute bottom-0 right-0 md:relative h-[45%] md:h-full z-10 flex items-end justify-end md:justify-center overflow-hidden md:overflow-visible pointer-events-none">
+                <!-- FOTO TRANSPARAN -->
+                <img src="foto-hero-transparent.png" alt="Rafiqatul Ulya" class="w-auto h-full md:h-[90%] lg:h-[105%] max-w-none object-contain object-right-bottom drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)] relative md:bottom-[-5%] right-[-10%] md:right-0">
+            </div>
+            
         </div>
     </section>
 
     <!-- SECTION 2: INTRODUCTION -->
-    <section id="about" class="bg-white py-20 px-6">
+    <section id="about" class="bg-white py-20 px-6 border-b border-gray-100">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
             
-            <!-- Gambar Kiri (Arch Shape) -->
+            <!-- Gambar Kiri -->
             <div class="relative max-w-sm mx-auto md:mx-0">
-                <div class="absolute inset-0 bg-brand-accent/20 arch-img translate-x-4 translate-y-4"></div>
-                <!-- Foto Profil Kamu -->
-                <img src="foto-about.jpg" alt="Rafiqatul Ulya" class="w-full h-[440px] object-cover arch-img shadow-lg relative z-10 border-4 border-white bg-gray-200">
-                <i class="fas fa-certificate text-brand-accent text-4xl absolute -left-4 top-10 z-20"></i>
+                <div class="absolute inset-0 border-2 border-brand-muted/20 arch-img translate-x-4 translate-y-4"></div>
+                <img src="foto-about.jpg" alt="Rafiqatul Ulya" class="w-full h-[440px] object-cover arch-img shadow-xl relative z-10 border-4 border-white bg-gray-100">
+                <i class="fas fa-certificate text-brand-secondary text-4xl absolute -left-4 top-10 z-20"></i>
             </div>
             
-            <!-- Teks Kanan (Sapaan Utama) -->
+            <!-- Teks Kanan -->
             <div class="space-y-6">
-                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-dark leading-tight font-medium">
-                    Hi, I'm <span class="text-brand-accent italic font-bold">Rafiqatul Ulya</span> — a multidisciplinary tech professional turning business needs into digital solutions.
+                <!-- Headings yang ditebalkan sesuai tema -->
+                <h2 class="font-sans text-4xl lg:text-5xl text-brand-dark leading-tight font-black tracking-tighter">
+                    Hi, I'm <span class="text-brand-secondary">Rafiqatul Ulya</span> — a multidisciplinary tech professional turning business needs into digital solutions.
                 </h2>
                 
-                <p class="text-gray-600 leading-relaxed text-sm md:text-base font-light">
+                <p class="text-brand-muted leading-relaxed text-sm md:text-base font-medium">
                     As an Information Systems graduate, I bridge business analysis, design, and development to create intuitive digital products, web solutions, and analytical dashboards. I’m passionate about transforming complex requirements into practical, user-centered solutions that create real business impact.
                 </p>
 
                 <div class="pt-4">
-                    <a href="#contact" class="inline-block border-2 border-brand-accent text-brand-accent px-8 py-3 rounded-full font-bold hover:bg-brand-accent hover:text-white transition">
+                    <a href="#contact" class="inline-block border-2 border-brand-dark text-brand-dark bg-white px-8 py-3 rounded-full text-sm font-bold hover:bg-brand-dark hover:text-white shadow-sm transition duration-300">
                         Let's Talk
                     </a>
                 </div>
@@ -146,28 +177,28 @@
         </div>
     </section>
 
-    <!-- SECTION 3: EDUCATION & CAREER INTERESTS (Seksi Baru yang Dibedakan) -->
-    <section class="bg-brand-cream border-y border-brand-accent/10 py-16 px-6">
+    <!-- SECTION 3: EDUCATION & CAREER INTERESTS -->
+    <section class="bg-brand-surface py-16 px-6 border-b border-gray-100">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center fade-in">
             
             <!-- KOTAK EDUCATION -->
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-brand-secondary">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold">Education</h3>
+                    <h3 class="font-sans tracking-tighter text-3xl text-brand-dark font-black">Education</h3>
                 </div>
                 
-                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-secondary transition duration-300">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div>
-                            <h4 class="font-serif font-bold text-xl text-brand-dark">Andalas University</h4>
-                            <p class="text-sm text-gray-500 mt-1">Bachelor of Information Systems</p>
+                            <h4 class="font-serif italic font-bold text-xl text-brand-dark">Andalas University</h4>
+                            <p class="text-sm text-brand-muted mt-1 font-semibold">Bachelor of Information Systems</p>
                         </div>
                         <div class="text-left sm:text-right">
-                            <span class="inline-block bg-brand-accent text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">GPA 3.86 / 4.00</span>
-                            <p class="text-[10px] uppercase tracking-wider text-brand-accent mt-2 font-bold">Graduated with Honors</p>
+                            <span class="inline-block bg-brand-dark text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">GPA 3.86 / 4.00</span>
+                            <p class="text-[10px] uppercase tracking-wider text-brand-secondary mt-2 font-bold">Graduated with Honors</p>
                         </div>
                     </div>
                 </div>
@@ -176,65 +207,66 @@
             <!-- KOTAK CAREER INTERESTS -->
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-brand-secondary">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold">Career Interests</h3>
+                    <h3 class="font-sans tracking-tighter text-3xl text-brand-dark font-black">Career Interests</h3>
                 </div>
                 
                 <div class="flex flex-wrap gap-3">
-                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-gray-700 rounded-full shadow-sm hover:border-brand-accent hover:text-brand-accent transition cursor-default">Business Analyst</span>
-                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-gray-700 rounded-full shadow-sm hover:border-brand-accent hover:text-brand-accent transition cursor-default">Product Management</span>
-                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-gray-700 rounded-full shadow-sm hover:border-brand-accent hover:text-brand-accent transition cursor-default">Digital Transformation</span>
-                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-gray-700 rounded-full shadow-sm hover:border-brand-accent hover:text-brand-accent transition cursor-default">BI & Data Analytics</span>
+                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-brand-dark rounded-full shadow-sm hover:border-brand-secondary hover:text-brand-secondary transition cursor-default">Business Analyst</span>
+                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-brand-dark rounded-full shadow-sm hover:border-brand-secondary hover:text-brand-secondary transition cursor-default">Product Management</span>
+                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-brand-dark rounded-full shadow-sm hover:border-brand-secondary hover:text-brand-secondary transition cursor-default">Digital Transformation</span>
+                    <span class="px-5 py-2.5 bg-white border border-gray-200 text-xs font-bold text-brand-dark rounded-full shadow-sm hover:border-brand-secondary hover:text-brand-secondary transition cursor-default">BI & Data Analytics</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- SECTION 4: COMPETENCIES (My Services) -->
-    <section id="competencies" class="bg-brand-dark text-white py-20 relative overflow-hidden border-t-4 border-brand-accent">
-        <div class="max-w-6xl mx-auto px-6 relative z-10 fade-in">
+    <!-- SECTION 4: COMPETENCIES -->
+    <section id="competencies" class="bg-brand-navy py-20 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10 fade-in">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
                 <div>
-                    <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">Core <span class="text-brand-accent italic">Competencies</span></h2>
+                    <!-- Judul Dipertebal -->
+                    <h2 class="font-sans font-black tracking-tighter text-5xl md:text-6xl text-brand-light mb-4">Core<br>Competencies.</h2>
                 </div>
-                <p class="text-brand-muted max-w-md text-sm leading-relaxed mb-2 md:mb-0">
+                <p class="text-brand-muted max-w-md text-sm leading-relaxed mb-2 md:mb-0 font-medium">
                     Translating complex business needs into effective, testable, and data-informed digital technology solutions.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group relative overflow-hidden">
-                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                <div class="bg-[#1A2133] border border-white/5 rounded-2xl p-8 hover:bg-[#20283E] transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 bg-brand-secondary/20 rounded-xl flex items-center justify-center text-brand-secondary text-2xl mb-6 group-hover:bg-brand-secondary group-hover:text-white transition duration-300">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Business Analysis<br>& QA</h3>
-                    <p class="text-brand-muted text-sm leading-relaxed mb-8">
+                    <h3 class="font-sans font-black text-2xl text-white mb-4 tracking-tight">Business Analysis<br>& QA</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed font-medium">
                         Translating stakeholder requirements into documented, testable digital solutions. Expertise in BRD creation and system testing.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group relative overflow-hidden">
-                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                <div class="bg-[#1A2133] border border-white/5 rounded-2xl p-8 hover:bg-[#20283E] transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 bg-brand-secondary/20 rounded-xl flex items-center justify-center text-brand-secondary text-2xl mb-6 group-hover:bg-brand-secondary group-hover:text-white transition duration-300">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Data Analytics<br>& Reporting</h3>
-                    <p class="text-brand-muted text-sm leading-relaxed mb-8">
+                    <h3 class="font-sans font-black text-2xl text-white mb-4 tracking-tight">Data Analytics<br>& Reporting</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed font-medium">
                         Querying and analyzing structured data using SQL/SPARQL. Building interactive dashboards (Power BI) to support decision making.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group relative overflow-hidden">
-                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                <div class="bg-[#1A2133] border border-white/5 rounded-2xl p-8 hover:bg-[#20283E] transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 bg-brand-secondary/20 rounded-xl flex items-center justify-center text-brand-secondary text-2xl mb-6 group-hover:bg-brand-secondary group-hover:text-white transition duration-300">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Product & Tech<br>Delivery</h3>
-                    <p class="text-brand-muted text-sm leading-relaxed mb-8">
+                    <h3 class="font-sans font-black text-2xl text-white mb-4 tracking-tight">Product & Tech<br>Delivery</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed font-medium">
                         Prototyping user-centered interfaces via Figma. Implementing solutions utilizing Python, PHP, and modern web frameworks.
                     </p>
                 </div>
@@ -242,75 +274,103 @@
         </div>
     </section>
 
-    <!-- SECTION 4: WORK EXPERIENCE (Timeline) -->
-    <section id="experience" class="py-20 px-6 bg-brand-cream border-b border-brand-accent/10">
+    <!-- SECTION 5: WORK EXPERIENCE (DESAIN UI INTERAKTIF) -->
+    <section id="experience" class="py-20 px-6 bg-white border-b border-gray-100">
         <div class="max-w-4xl mx-auto text-center mb-16 fade-in">
-            <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">Professional <span class="text-brand-accent italic">Journey</span></h2>
+            <h2 class="font-sans font-black tracking-tighter text-4xl md:text-5xl text-brand-dark mb-4">Professional <span class="font-serif italic font-bold text-brand-secondary">Journey</span></h2>
         </div>
 
         <div class="max-w-4xl mx-auto relative fade-in">
             <!-- Garis Tengah -->
-            <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-brand-accent/30 md:-translate-x-1/2"></div>
+            <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-100 md:-translate-x-1/2"></div>
 
-            <!-- Item 1 -->
-            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-12 pl-20 md:pl-0">
+            <!-- Item 1 (Interaktif Hover) -->
+            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-12 pl-20 md:pl-0 group cursor-default">
+                
+                <!-- Teks Kiri -->
                 <div class="w-full md:w-[45%] text-left md:text-right mb-2 md:mb-0 pr-0 md:pr-8">
-                    <h3 class="font-bold text-xl text-brand-dark">UI/UX Designer</h3>
-                    <p class="text-brand-accent text-sm font-semibold">Freelance Web Solution Projects</p>
-                    <p class="text-gray-500 text-xs mt-1">Jan 2025 - Present</p>
+                    <h3 class="font-black text-2xl text-brand-dark tracking-tight group-hover:text-brand-secondary transition duration-300">UI/UX Designer</h3>
+                    <p class="text-brand-muted text-sm font-semibold mt-1">Freelance Web Solution Projects</p>
+                    <p class="font-serif bg-brand-muted text-white px-2 py-1 inline-block text-xs mt-2 font-bold tracking-wider group-hover:bg-brand-secondary transition duration-300">Jan.2025 - Present</p>
                 </div>
-                <!-- Titik Tengah -->
-                <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-brand-cream border-4 border-brand-accent rounded-full -translate-x-1/2 md:translate-y-0 mt-1 md:mt-0 z-10 flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 bg-brand-accent rounded-full"></div>
+                
+                <!-- Titik Tengah Interaktif -->
+                <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-white border-[3px] border-brand-dark rounded-full -translate-x-1/2 md:translate-y-0 mt-1 md:mt-0 z-10 flex items-center justify-center shadow-md group-hover:border-brand-secondary group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition duration-300">
+                    <div class="w-2 h-2 bg-brand-secondary rounded-full group-hover:scale-150 transition duration-300"></div>
                 </div>
+                
+                <!-- Kotak Deskripsi Kanan (Animasi Angkat & Garis) -->
                 <div class="w-full md:w-[45%] text-left pl-0 md:pl-8">
-                    <p class="text-gray-600 text-sm leading-relaxed bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        Designing user-centered digital interfaces and functional web platforms for various client needs.
-                    </p>
+                    <div class="bg-brand-surface p-6 rounded-2xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                        <!-- Garis Biru Muncul saat di-hover -->
+                        <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                        <p class="text-brand-dark text-sm font-medium leading-relaxed">
+                            Designing user-centered digital interfaces and functional web platforms for various client needs.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Item 2 -->
-            <div class="relative flex flex-col md:flex-row-reverse justify-between items-start md:items-center w-full mb-12 pl-20 md:pl-0">
+            <!-- Item 2 (Interaktif Hover - Reversed) -->
+            <div class="relative flex flex-col md:flex-row-reverse justify-between items-start md:items-center w-full mb-12 pl-20 md:pl-0 group cursor-default">
+                
+                <!-- Teks Kanan -->
                 <div class="w-full md:w-[45%] text-left mb-2 md:mb-0 pl-0 md:pl-8">
-                    <h3 class="font-bold text-xl text-brand-dark">IT Staff Intern</h3>
-                    <p class="text-brand-accent text-sm font-semibold">Wikidata Program | Wikimedia Indonesia</p>
-                    <p class="text-gray-500 text-xs mt-1">Sep 2024 - Jan 2025</p>
+                    <h3 class="font-black text-2xl text-brand-dark tracking-tight group-hover:text-brand-secondary transition duration-300">IT Staff Intern</h3>
+                    <p class="text-brand-muted text-sm font-semibold mt-1">Wikidata Program | Wikimedia Indonesia</p>
+                    <p class="font-serif bg-gray-200 text-brand-dark px-2 py-1 inline-block text-xs mt-2 font-bold tracking-wider group-hover:bg-brand-secondary group-hover:text-white transition duration-300">Sep.2024 - Jan.2025</p>
                 </div>
-                <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-brand-cream border-4 border-brand-accent rounded-full -translate-x-1/2 md:translate-y-0 mt-1 md:mt-0 z-10 flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 bg-brand-accent rounded-full"></div>
+                
+                <!-- Titik Tengah Interaktif -->
+                <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-white border-[3px] border-gray-300 rounded-full -translate-x-1/2 md:translate-y-0 mt-1 md:mt-0 z-10 flex items-center justify-center group-hover:border-brand-secondary group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition duration-300">
+                    <div class="w-2 h-2 bg-transparent rounded-full group-hover:bg-brand-secondary group-hover:scale-150 transition duration-300"></div>
                 </div>
+                
+                <!-- Kotak Deskripsi Kiri (Animasi Angkat & Garis Kanan) -->
                 <div class="w-full md:w-[45%] text-left md:text-right pr-0 md:pr-8">
-                    <p class="text-gray-600 text-sm leading-relaxed bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        Assisted in data management, digital product design initiatives, and technology delivery processes for the Wikidata platform.
-                    </p>
+                    <div class="bg-brand-surface p-6 rounded-2xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                        <!-- Garis Biru Muncul saat di-hover -->
+                        <div class="absolute top-0 right-0 w-1.5 h-full bg-brand-secondary transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                        <p class="text-brand-dark text-sm font-medium leading-relaxed">
+                            Assisted in data management, digital product design initiatives, and technology delivery processes for the Wikidata platform.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-12 pl-20 md:pl-0">
+            <!-- Item 3 (Interaktif Hover) -->
+            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-12 pl-20 md:pl-0 group cursor-default">
+                
+                <!-- Teks Kiri -->
                 <div class="w-full md:w-[45%] text-left md:text-right mb-2 md:mb-0 pr-0 md:pr-8">
-                    <h3 class="font-bold text-xl text-brand-dark">IT Staff Intern</h3>
-                    <p class="text-brand-accent text-sm font-semibold">BPKP West Sumatra Representative Office</p>
-                    <p class="text-gray-500 text-xs mt-1">Jan 2024 - Feb 2024</p>
+                    <h3 class="font-black text-2xl text-brand-dark tracking-tight group-hover:text-brand-secondary transition duration-300">IT Staff Intern</h3>
+                    <p class="text-brand-muted text-sm font-semibold mt-1">BPKP West Sumatra Representative</p>
+                    <p class="font-serif bg-gray-200 text-brand-dark px-2 py-1 inline-block text-xs mt-2 font-bold tracking-wider group-hover:bg-brand-secondary group-hover:text-white transition duration-300">Jan.2024 - Feb.2024</p>
                 </div>
-                <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-brand-cream border-4 border-brand-accent rounded-full -translate-x-1/2 md:translate-y-0 mt-1 md:mt-0 z-10 flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 bg-brand-accent rounded-full"></div>
+                
+                <!-- Titik Tengah Interaktif -->
+                <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-white border-[3px] border-gray-300 rounded-full -translate-x-1/2 md:translate-y-0 mt-1 md:mt-0 z-10 flex items-center justify-center group-hover:border-brand-secondary group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition duration-300">
+                    <div class="w-2 h-2 bg-transparent rounded-full group-hover:bg-brand-secondary group-hover:scale-150 transition duration-300"></div>
                 </div>
+                
+                <!-- Kotak Deskripsi Kanan (Animasi Angkat & Garis) -->
                 <div class="w-full md:w-[45%] text-left pl-0 md:pl-8">
-                    <p class="text-gray-600 text-sm leading-relaxed bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        Developed the BPKP Internal Portal and centralized reporting dashboard using Google Sites.
-                    </p>
+                    <div class="bg-brand-surface p-6 rounded-2xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                        <p class="text-brand-dark text-sm font-medium leading-relaxed">
+                            Developed the BPKP Internal Portal and centralized reporting dashboard using Google Sites.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5: PORTFOLIO -->
-    <section id="portfolio" class="py-20 px-6 bg-white border-t border-brand-accent/10">
+    <!-- SECTION 6: PORTFOLIO -->
+    <section id="portfolio" class="py-20 px-6 bg-brand-surface border-b border-gray-100">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end mb-12 fade-in">
             <div>
-                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">Lets have a look at <br>my <span class="text-brand-accent italic">Portfolio</span></h2>
+                <h2 class="font-sans font-black tracking-tighter text-5xl md:text-6xl text-brand-dark mb-4">Project<br>Showcase.</h2>
             </div>
         </div>
 
@@ -318,156 +378,156 @@
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             
             <!-- Project 1: BPKP Portal -->
-            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
-                <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <img src="project-bpkp.jpg" alt="BPKP Portal" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <a href="https://sites.google.com/view/bpkpsumbar/halaman-muka" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
+            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
+                <div class="h-[250px] relative border-b border-gray-100 overflow-hidden bg-gray-100">
+                    <img src="project-bpkp.jpg" alt="BPKP Portal" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <a href="https://sites.google.com/view/bpkpsumbar/halaman-muka" target="_blank" class="bg-white text-brand-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">Web Development</span>
+                        <span class="font-serif italic font-bold text-[11px] text-brand-secondary bg-blue-50 px-3 py-1 border border-blue-100">Web Development</span>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold mb-3 group-hover:text-brand-accent transition">BPKP Internal Portal</h3>
+                    <h3 class="font-sans font-black text-2xl text-brand-dark mb-3 tracking-tight group-hover:text-brand-secondary transition">BPKP Internal Portal</h3>
                     
-                    <p class="text-sm text-gray-600 leading-relaxed mb-8 flex-grow">
+                    <p class="text-sm text-brand-muted leading-relaxed font-medium mb-8 flex-grow">
                         Developed a centralized internal portal using Google Sites to streamline access to organizational systems, resources, and reporting dashboards.
                     </p>
                     
                     <div class="pt-5 border-t border-gray-100 mt-auto">
-                        <a href="https://sites.google.com/view/bpkpsumbar/halaman-muka" target="_blank" class="inline-flex items-center gap-2 text-brand-accent font-bold text-sm hover:text-brand-dark transition">
-                            Visit BPKP Portal <i class="fas fa-arrow-right"></i>
+                        <a href="https://sites.google.com/view/bpkpsumbar/halaman-muka" target="_blank" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:text-brand-secondary transition tracking-wide">
+                            VISIT BPKP PORTAL <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: Maju Tetap Bersama (Diperjelas sebagai Website) -->
-            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
-                <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <img src="project-mtb.jpg" alt="Maju Tetap Bersama" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <a href="https://majutetapbersama.com/" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
+            <!-- Project 2: Maju Tetap Bersama -->
+            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
+                <div class="h-[250px] relative border-b border-gray-100 overflow-hidden bg-gray-100">
+                    <img src="project-mtb.jpg" alt="Maju Tetap Bersama" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <a href="https://majutetapbersama.com/" target="_blank" class="bg-white text-brand-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">Web Company Profile</span>
+                        <span class="font-serif italic font-bold text-[11px] text-brand-secondary bg-blue-50 px-3 py-1 border border-blue-100">Company Profile</span>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold mb-3 group-hover:text-brand-accent transition">PT Maju Tetap Bersama Website</h3>
+                    <h3 class="font-sans font-black text-2xl text-brand-dark mb-3 tracking-tight group-hover:text-brand-secondary transition">PT Maju Tetap Bersama</h3>
                     
-                    <p class="text-sm text-gray-600 leading-relaxed mb-8 flex-grow">
+                    <p class="text-sm text-brand-muted leading-relaxed font-medium mb-8 flex-grow">
                         Designed and developed a responsive B2B company profile website to enhance corporate identity and centralize business information.
                     </p>
                     
                     <div class="pt-5 border-t border-gray-100 mt-auto">
-                        <a href="https://majutetapbersama.com/" target="_blank" class="inline-flex items-center gap-2 text-brand-accent font-bold text-sm hover:text-brand-dark transition">
-                            Link: majutetapbersama.com <i class="fas fa-arrow-right"></i>
+                        <a href="https://majutetapbersama.com/" target="_blank" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:text-brand-secondary transition tracking-wide">
+                            LINK: MAJUTETAPBERSAMA.COM <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 3: Pasar Tutor -->
-            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
-                <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <img src="project-pasartutor.jpg" alt="Pasar Tutor" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <a href="https://www.pasartutor.com/" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
+            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
+                <div class="h-[250px] relative border-b border-gray-100 overflow-hidden bg-gray-100">
+                    <img src="project-pasartutor.jpg" alt="Pasar Tutor" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <a href="https://www.pasartutor.com/" target="_blank" class="bg-white text-brand-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">Web App Design</span>
+                        <span class="font-serif italic font-bold text-[11px] text-brand-secondary bg-blue-50 px-3 py-1 border border-blue-100">Web App Design</span>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold mb-3 group-hover:text-brand-accent transition">PasarTutor: Ed-Tech Platform</h3>
+                    <h3 class="font-sans font-black text-2xl text-brand-dark mb-3 tracking-tight group-hover:text-brand-secondary transition">PasarTutor: Ed-Tech Platform</h3>
                     
-                    <p class="text-sm text-gray-600 leading-relaxed mb-8 flex-grow">
+                    <p class="text-sm text-brand-muted leading-relaxed font-medium mb-8 flex-grow">
                         Designed a modern marketplace platform to simplify class booking. Delivered high-fidelity Figma prototypes and mapped user journeys for seamless development.
                     </p>
                     
                     <div class="pt-5 border-t border-gray-100 mt-auto">
-                        <a href="https://www.pasartutor.com/" target="_blank" class="inline-flex items-center gap-2 text-brand-accent font-bold text-sm hover:text-brand-dark transition">
-                            Link: pasartutor.com <i class="fas fa-arrow-right"></i>
+                        <a href="https://www.pasartutor.com/" target="_blank" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:text-brand-secondary transition tracking-wide">
+                            LINK: PASARTUTOR.COM <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 4: AIMS -->
-            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
-                <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <img src="project-aims.jpg" alt="AIMS Messaging App" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <a href="https://drive.google.com/file/d/1feJrbV4Jlgn7-MY7DGpABoo_f_CKMeUp/view" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
+            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
+                <div class="h-[250px] relative border-b border-gray-100 overflow-hidden bg-gray-100">
+                    <img src="project-aims.jpg" alt="AIMS Messaging App" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <a href="https://drive.google.com/file/d/1feJrbV4Jlgn7-MY7DGpABoo_f_CKMeUp/view" target="_blank" class="bg-white text-brand-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">Mobile App Design</span>
+                        <span class="font-serif italic font-bold text-[11px] text-brand-secondary bg-blue-50 px-3 py-1 border border-blue-100">Mobile App Design</span>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold mb-3 group-hover:text-brand-accent transition">AIMS: Secure Messaging App</h3>
+                    <h3 class="font-sans font-black text-2xl text-brand-dark mb-3 tracking-tight group-hover:text-brand-secondary transition">AIMS: Secure Messaging App</h3>
                     
-                    <p class="text-sm text-gray-600 leading-relaxed mb-8 flex-grow">
+                    <p class="text-sm text-brand-muted leading-relaxed font-medium mb-8 flex-grow">
                         Led system analysis and UI design for a secure, military-grade messaging ecosystem, including complete data architecture and database schema planning.
                     </p>
                     
                     <div class="pt-5 border-t border-gray-100 mt-auto">
-                        <a href="https://drive.google.com/file/d/1feJrbV4Jlgn7-MY7DGpABoo_f_CKMeUp/view" target="_blank" class="inline-flex items-center gap-2 text-brand-accent font-bold text-sm hover:text-brand-dark transition">
-                            View Design Prototype <i class="fas fa-arrow-right"></i>
+                        <a href="https://drive.google.com/file/d/1feJrbV4Jlgn7-MY7DGpABoo_f_CKMeUp/view" target="_blank" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:text-brand-secondary transition tracking-wide">
+                            VIEW DESIGN PROTOTYPE <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 5: BMT Analytics -->
-            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
-                <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <img src="project-bmt.jpg" alt="BMT Financial Dashboard" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <a href="#" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-chart-line text-lg"></i></a>
+            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
+                <div class="h-[250px] relative border-b border-gray-100 overflow-hidden bg-gray-100">
+                    <img src="project-bmt.jpg" alt="BMT Financial Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <a href="#" target="_blank" class="bg-white text-brand-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-chart-line text-lg"></i></a>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">Data Analytics</span>
+                        <span class="font-serif italic font-bold text-[11px] text-brand-secondary bg-blue-50 px-3 py-1 border border-blue-100">Data Analytics</span>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold mb-3 group-hover:text-brand-accent transition">BMT Financial BI Dashboard</h3>
+                    <h3 class="font-sans font-black text-2xl text-brand-dark mb-3 tracking-tight group-hover:text-brand-secondary transition">BMT Financial BI Dashboard</h3>
                     
-                    <p class="text-sm text-gray-600 leading-relaxed mb-8 flex-grow">
+                    <p class="text-sm text-brand-muted leading-relaxed font-medium mb-8 flex-grow">
                         Built predictive regression models and an interactive Power BI dashboard to monitor financial performance and support proactive business decisions.
                     </p>
                     
                     <div class="pt-5 border-t border-gray-100 mt-auto">
-                        <a href="#" target="_blank" class="inline-flex items-center gap-2 text-brand-accent font-bold text-sm hover:text-brand-dark transition">
-                            View Dashboard Detail <i class="fas fa-arrow-right"></i>
+                        <a href="#" target="_blank" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:text-brand-secondary transition tracking-wide">
+                            VIEW DASHBOARD DETAIL <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 6: Mining Command Center -->
-            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
-                <div class="h-[250px] relative border-b-4 border-brand-cream overflow-hidden bg-gray-100">
-                    <img src="project-mining.jpg" alt="Mining Command Center" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <a href="https://drive.google.com/file/d/1UqmgmKMvlobMr0oK5hbc7zAuzPm76DPU/view" target="_blank" class="bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
+            <div class="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 overflow-hidden fade-in">
+                <div class="h-[250px] relative border-b border-gray-100 overflow-hidden bg-gray-100">
+                    <img src="project-mining.jpg" alt="Mining Command Center" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-brand-navy/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <a href="https://drive.google.com/file/d/1UqmgmKMvlobMr0oK5hbc7zAuzPm76DPU/view" target="_blank" class="bg-white text-brand-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform scale-50 group-hover:scale-100 transition"><i class="fas fa-external-link-alt text-lg"></i></a>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex gap-2 mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">IoT Dashboard</span>
+                        <span class="font-serif italic font-bold text-[11px] text-brand-secondary bg-blue-50 px-3 py-1 border border-blue-100">IoT Dashboard</span>
                     </div>
-                    <h3 class="font-serif text-2xl text-brand-dark font-bold mb-3 group-hover:text-brand-accent transition">Mining Command Center</h3>
+                    <h3 class="font-sans font-black text-2xl text-brand-dark mb-3 tracking-tight group-hover:text-brand-secondary transition">Mining Command Center</h3>
                     
-                    <p class="text-sm text-gray-600 leading-relaxed mb-8 flex-grow">
+                    <p class="text-sm text-brand-muted leading-relaxed font-medium mb-8 flex-grow">
                         Prototyped a real-time IoT monitoring dashboard integrating GPS tracking, video feeds, and safety analytics to accelerate emergency response.
                     </p>
                     
                     <div class="pt-5 border-t border-gray-100 mt-auto">
-                        <a href="https://drive.google.com/file/d/1UqmgmKMvlobMr0oK5hbc7zAuzPm76DPU/view" target="_blank" class="inline-flex items-center gap-2 text-brand-accent font-bold text-sm hover:text-brand-dark transition">
-                            View Command Center <i class="fas fa-arrow-right"></i>
+                        <a href="https://drive.google.com/file/d/1UqmgmKMvlobMr0oK5hbc7zAuzPm76DPU/view" target="_blank" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:text-brand-secondary transition tracking-wide">
+                            VIEW COMMAND CENTER <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -476,66 +536,54 @@
         </div>
     </section>
 
-    <!-- SECTION 6: CERTIFICATES -->
-    <section class="bg-brand-dark text-white py-20 px-6 border-t border-brand-accent/20">
+    <!-- SECTION 7: CERTIFICATES -->
+    <section class="bg-white py-20 px-6 border-b border-gray-100">
         <div class="max-w-6xl mx-auto fade-in">
             <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">Licenses & <span class="text-brand-accent italic">Certificates</span></h2>
-                <p class="text-brand-muted text-sm">Professional validations of my skills and knowledge.</p>
+                <h2 class="font-sans font-black tracking-tighter text-4xl md:text-5xl text-brand-dark mb-4">Licenses & <span class="font-serif italic text-brand-secondary">Certificates</span></h2>
+                <p class="text-brand-muted text-sm font-medium">Professional validations of my skills and knowledge.</p>
             </div>
 
-            <!-- Grid Certificates dengan area gambar -->
+            <!-- Grid Certificates -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- Cert 1: Google -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group flex flex-col h-full hover:bg-white/10 transition duration-300">
-                    <!-- Area Gambar Sertifikat -->
-                    <div class="h-48 relative overflow-hidden bg-[#2D2A2A]">
-                        <!-- Nanti ganti dengan gambar asli -->
-                        <img src="cert-google.jpg" alt="Google UX Design Certificate" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 border-b border-white/10"></div>
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group flex flex-col h-full shadow-sm hover:shadow-xl hover:border-brand-secondary transition duration-300">
+                    <div class="h-48 relative overflow-hidden bg-gray-100 border-b border-gray-100">
+                        <img src="cert-google.jpg" alt="Google UX Design Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <!-- Info Konten -->
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-white text-xl leading-tight mb-1">Google UX Design</h4>
-                        <p class="text-brand-accent text-xs font-bold uppercase tracking-wider mb-4">Professional Certificate</p>
-                        <p class="text-brand-muted text-sm leading-relaxed flex-grow">
+                        <h4 class="font-sans font-black text-brand-dark text-xl leading-tight mb-1">Google UX Design</h4>
+                        <p class="font-serif italic text-brand-secondary text-sm font-bold tracking-wide mb-4">Professional Certificate</p>
+                        <p class="text-brand-muted text-sm leading-relaxed font-medium flex-grow">
                             8 Courses covering UX research, Figma prototyping, and user testing. Demonstrated ability to empathize with users and build functional interfaces.
                         </p>
                     </div>
                 </div>
 
                 <!-- Cert 2: Data Analysis -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group flex flex-col h-full hover:bg-white/10 transition duration-300">
-                    <!-- Area Gambar Sertifikat -->
-                    <div class="h-48 relative overflow-hidden bg-[#2D2A2A]">
-                        <!-- Nanti ganti dengan gambar asli -->
-                        <img src="cert-myskill.jpg" alt="Data Analysis Certificate" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 border-b border-white/10"></div>
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group flex flex-col h-full shadow-sm hover:shadow-xl hover:border-brand-secondary transition duration-300">
+                    <div class="h-48 relative overflow-hidden bg-gray-100 border-b border-gray-100">
+                        <img src="cert-myskill.jpg" alt="Data Analysis Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <!-- Info Konten -->
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-white text-xl leading-tight mb-1">Data Analysis</h4>
-                        <p class="text-brand-accent text-xs font-bold uppercase tracking-wider mb-4">MySkill Specialization</p>
-                        <p class="text-brand-muted text-sm leading-relaxed flex-grow">
+                        <h4 class="font-sans font-black text-brand-dark text-xl leading-tight mb-1">Data Analysis</h4>
+                        <p class="font-serif italic text-brand-secondary text-sm font-bold tracking-wide mb-4">MySkill Specialization</p>
+                        <p class="text-brand-muted text-sm leading-relaxed font-medium flex-grow">
                             Advanced data science, SQL querying, and business visualization techniques. Proven ability to translate raw data into actionable business insights.
                         </p>
                     </div>
                 </div>
 
                 <!-- Cert 3: CodePolitan -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group flex flex-col h-full hover:bg-white/10 transition duration-300">
-                    <!-- Area Gambar Sertifikat -->
-                    <div class="h-48 relative overflow-hidden bg-[#2D2A2A]">
-                        <!-- Nanti ganti dengan gambar asli -->
-                        <img src="cert-codepolitan.jpg" alt="Basic Algorithms Certificate" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 border-b border-white/10"></div>
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group flex flex-col h-full shadow-sm hover:shadow-xl hover:border-brand-secondary transition duration-300">
+                    <div class="h-48 relative overflow-hidden bg-gray-100 border-b border-gray-100">
+                        <img src="cert-codepolitan.jpg" alt="Basic Algorithms Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <!-- Info Konten -->
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-white text-xl leading-tight mb-1">Basic Algorithms</h4>
-                        <p class="text-brand-accent text-xs font-bold uppercase tracking-wider mb-4">CodePolitan</p>
-                        <p class="text-brand-muted text-sm leading-relaxed flex-grow">
+                        <h4 class="font-sans font-black text-brand-dark text-xl leading-tight mb-1">Basic Algorithms</h4>
+                        <p class="font-serif italic text-brand-secondary text-sm font-bold tracking-wide mb-4">CodePolitan</p>
+                        <p class="text-brand-muted text-sm leading-relaxed font-medium flex-grow">
                             Foundational logic and algorithmic problem solving. Strengthened logical thinking for developing efficient software and technology solutions.
                         </p>
                     </div>
@@ -545,51 +593,59 @@
         </div>
     </section>
 
-    <!-- SECTION 7: CONTACT -->
-    <section id="contact" class="bg-brand-cream py-20 px-6">
+    <!-- SECTION 8: CONTACT -->
+    <section id="contact" class="bg-brand-navy py-20 px-6 border-t border-white/5">
         <div class="max-w-4xl mx-auto text-center fade-in">
-            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-dark mb-6 leading-tight">
+            <h2 class="font-sans font-black tracking-tighter text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
                 Bringing Value to Your Team <br>
-                or <span class="text-brand-accent italic">Your Next Digital Product</span>
+                or <span class="font-serif italic font-bold text-brand-secondary">Your Next Digital Product</span>
             </h2>
-            <p class="text-gray-600 mb-12 max-w-2xl mx-auto text-sm md:text-base leading-relaxed font-light">
+            <p class="text-[#A2A8BA] mb-12 max-w-2xl mx-auto text-sm md:text-base leading-relaxed font-medium">
                 Open for full-time opportunities in Business Analysis, Product Management, and Data Analytics, as well as tech delivery projects. Let's build something great together.
             </p>
 
             <!-- Contact Input Style Layout -->
-            <div class="bg-white border border-gray-200 p-2 rounded-full flex items-center max-w-lg mx-auto shadow-sm mb-12">
-                <div class="pl-6 text-brand-accent">
+            <div class="bg-white border border-transparent p-2 rounded-full flex items-center max-w-lg mx-auto shadow-2xl mb-12 relative overflow-hidden">
+                <div class="pl-6 text-brand-navy relative z-10">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <input type="email" value="rafiqatululya30@gmail.com" readonly class="bg-transparent w-full px-4 outline-none text-gray-700 cursor-default text-sm font-medium">
+                <input type="email" value="rafiqatululya30@gmail.com" readonly class="bg-transparent w-full px-4 outline-none text-brand-navy cursor-default text-sm font-bold relative z-10">
                 
-                <!-- Tombol ini sekarang menggunakan URL khusus langsung ke Gmail Web -->
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rafiqatululya30@gmail.com&su=Inquiry+from+Portfolio+Website" target="_blank" rel="noopener noreferrer" class="bg-brand-accent text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-brand-dark transition whitespace-nowrap shadow-md">
-                    Send Mail
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rafiqatululya30@gmail.com&su=Inquiry+from+Portfolio+Website" target="_blank" rel="noopener noreferrer" class="bg-brand-secondary text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-blue-600 shadow-md transition duration-300 whitespace-nowrap relative z-10 tracking-wide">
+                    SEND MAIL
                 </a>
             </div>
 
             <!-- Stats/Info Row -->
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-brand-accent/10 pt-10">
-                <div class="flex items-center gap-3">
-                    <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-white/10 pt-10">
+                
+                <!-- LINK WHATSAPP KLIKABLE -->
+                <a href="https://wa.me/6283898839027" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-light text-lg border border-white/10 group-hover:bg-green-500 group-hover:text-white group-hover:border-green-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
                     <div class="text-left">
-                        <p class="text-xs text-gray-500 font-semibold">WhatsApp</p>
-                        <p class="font-bold text-brand-dark text-sm">+62 838-9883-9027</p>
+                        <p class="text-[10px] text-[#A2A8BA] font-bold uppercase tracking-wider group-hover:text-gray-300 transition-colors duration-300">WhatsApp</p>
+                        <p class="font-bold text-white text-sm group-hover:text-green-400 transition-colors duration-300">+62 838-9883-9027</p>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-light text-lg border border-white/10">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] text-[#A2A8BA] font-bold uppercase tracking-wider">LinkedIn</p>
+                        <a href="https://linkedin.com/in/rafiqatululya/" target="_blank" class="font-bold text-white text-sm hover:text-brand-secondary transition">/in/rafiqatululya</a>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
-                    <i class="fab fa-linkedin text-blue-600 text-2xl"></i>
-                    <div class="text-left">
-                        <p class="text-xs text-gray-500 font-semibold">LinkedIn</p>
-                        <a href="https://linkedin.com/in/rafiqatululya/" target="_blank" class="font-bold text-brand-dark text-sm hover:text-brand-accent cursor-pointer">/in/rafiqatululya</a>
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-secondary text-lg border border-brand-secondary/30">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-map-marker-alt text-brand-accent text-2xl"></i>
                     <div class="text-left">
-                        <p class="text-xs text-gray-500 font-semibold">Location</p>
-                        <p class="font-bold text-brand-dark text-sm">Padang, Indonesia</p>
+                        <p class="text-[10px] text-[#A2A8BA] font-bold uppercase tracking-wider">Location</p>
+                        <p class="font-bold text-white text-sm">Padang, Indonesia</p>
                     </div>
                 </div>
             </div>
@@ -597,35 +653,35 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-brand-dark text-white pt-16 pb-8 px-6 border-t border-white/10">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12 mb-8">
+    <footer class="bg-[#0B0F1A] text-brand-muted pt-16 pb-8 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/5 pb-12 mb-8">
             <div class="md:col-span-2">
-                <a href="#" class="font-serif text-3xl font-bold tracking-widest text-brand-cream block mb-4">RU.</a>
-                <p class="text-brand-muted text-sm leading-relaxed max-w-sm">
-                    Technology Delivery, Data Analytics, and Digital Product Design portfolio. Dedicated to translating complex problems into elegant digital solutions.
+                <a href="#" class="font-sans text-3xl font-black tracking-widest text-white block mb-4">RU<span class="text-brand-accent">.</span></a>
+                <p class="text-sm leading-relaxed max-w-sm font-medium">
+                    Technology Delivery, Data Analytics, and Digital Product Design portfolio. Dedicated to translating complex problems into elegant data-driven digital solutions.
                 </p>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-4 font-serif">Quick Links</h4>
-                <ul class="space-y-2 text-sm text-brand-muted">
-                    <li><a href="#home" class="hover:text-brand-accent transition">Home</a></li>
-                    <li><a href="#about" class="hover:text-brand-accent transition">About</a></li>
-                    <li><a href="#competencies" class="hover:text-brand-accent transition">Services</a></li>
-                    <li><a href="#portfolio" class="hover:text-brand-accent transition">Portfolio</a></li>
-                    <li><a href="#contact" class="hover:text-brand-accent transition">Contact</a></li>
+                <h4 class="font-bold text-lg mb-4 text-white tracking-tight">Quick Links</h4>
+                <ul class="space-y-2 text-sm font-medium">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About</a></li>
+                    <li><a href="#competencies" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-4 font-serif">Connect</h4>
+                <h4 class="font-bold text-lg mb-4 text-white tracking-tight">Connect</h4>
                 <div class="flex gap-4">
-                    <a href="https://linkedin.com/in/rafiqatululya/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent transition"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:rafiqatululya30@gmail.com" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent transition"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/rafiqatululya/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-brand-secondary hover:border-brand-secondary transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/6283898839027" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-brand-secondary hover:border-brand-secondary transition duration-300"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-brand-muted">
+        <div class="max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs font-semibold tracking-wide text-[#697085]">
             <p>&copy; 2026 Rafiqatul Ulya. All rights reserved.</p>
-            <p class="mt-2 md:mt-0">Designed with Passion.</p>
+            <p class="mt-2 md:mt-0">Designed with precision & passion.</p>
         </div>
     </footer>
 
